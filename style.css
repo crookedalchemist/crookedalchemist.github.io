@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-color: rgb(251, 251, 253);
 }
 
 .navbar{
@@ -7,15 +8,19 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: rgb(251, 251, 253);
     padding: 15px;
+    position: sticky;
+    max-width: 100%;
+    top: 0;
+    z-index: 100;
 }
 .navbar a{
     text-decoration: none;
-    color: inherit;
+    color: rgb(29, 29, 31);
 }
 .logo{
-    margin: 50px;
+    margin: 10px;
 }
 .list{
     list-style: none;
@@ -43,4 +48,19 @@ body{
     #toggler:checked ~ .menu{
         max-height: 100%;
     }
+}
+
+/* contact form */
+.section{
+    background-color: rgb(29, 29, 31);
+    height: 520px;
+    max-width: 100%;
+    padding-top: 80px;
+}
+
+.sectionB{
+    background-color: rgb(245, 245, 247);
+    height: 520px;
+    max-width: 100%;
+    padding-top: 80px;
 }

@@ -1,0 +1,6 @@
+color palette
+--text: rgb(29, 29, 31);
+--background: rgb(251, 251, 253);
+--primary: rgb(29, 29, 31);
+--secondary: rgb(245, 245, 247);
+--accent: rgb(0, 87, 102);
