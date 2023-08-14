@@ -1,6 +1,71 @@
-color palette
---text: rgb(29, 29, 31);
---background: rgb(251, 251, 253);
---primary: rgb(29, 29, 31);
---secondary: rgb(245, 245, 247);
---accent: rgb(0, 87, 102);
+Color Pallete
+
+--text: rgb(242, 242, 242);
+--background: rgb(20, 20, 20);
+--primary: rgb(0, 187, 237);
+--secondary: rgb(97, 58, 0);
+--accent: rgb(191, 0, 29);
+
+
+
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(20, 20, 20);
+    padding: 15px;
+    position: sticky;
+    max-width: 100%;
+    top: 0;
+    z-index: 100;
+}
+.navbar a{
+    text-decoration: none;
+    color: rgb(29, 29, 31);
+}
+.logo{
+    margin: 10px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+#toggler, .navbar label{
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    .list{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .navbar label{
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+}
+
+/* contact form */
+.section{
+    background-color: rgb(29, 29, 31);
+    height: 520px;
+    max-width: 100%;
+    padding-top: 80px;
+}
+
+.sectionB{
+    background-color: rgb(245, 245, 247);
+    height: 520px;
+    max-width: 100%;
+    padding-top: 80px;
+}

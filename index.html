@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lentherick Losper - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <!--Nav section-->
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <a href="#" class="logo">Logo Here</a>
         <input type="checkbox" id="toggler">
         <label for="toggler"><img src="ico/feather/menu.svg"/></label>
@@ -18,14 +20,30 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button id="downloadButton">Download</button></li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-logo" href="#">My Website</a>
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </div>
+        <ul class="navbar-nav" id="navbarNav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work Experience</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a class="download-cv" href="#">Download CV</a></li>
+        </ul>
+    </div>
     <!--Nav section-->
 
     <!--about-->
     <div id="about" class="sectionB" style="padding-top:0;">
-        about here
+        
     </div>
     <div id="skills" class="section">
         skills here
@@ -39,5 +57,6 @@
 
         </form>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

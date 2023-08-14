@@ -1,66 +1,123 @@
-body{
-    margin: 0;
-    background-color: rgb(251, 251, 253);
+:root {
+    --text: rgb(242, 242, 242);
+    --background: rgb(20, 20, 20);
+    --primary: rgb(0, 187, 237);
+    --secondary: rgb(255, 157, 0);
+    --accent: rgb(191, 0, 29);
 }
 
-.navbar{
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.navbar {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
-    background-color: rgb(251, 251, 253);
-    padding: 15px;
-    position: sticky;
-    max-width: 100%;
-    top: 0;
-    z-index: 100;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.navbar a{
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    color: var(--primary);
     text-decoration: none;
-    color: rgb(29, 29, 31);
+    margin-right: 10px; /* Add space between logo and toggle */
 }
-.logo{
-    margin: 10px;
+
+.navbar-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    margin-left: 10px; /* Add space between logo and toggle */
 }
-.list{
+
+.navbar-nav {
     list-style: none;
     display: flex;
-    gap: 25px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
-#toggler, .navbar label{
-    display: none;
+
+.navbar-nav li {
+    margin: 0 15px;
 }
-@media screen and (max-width: 600px) {
-    .menu{
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-    }
-    .list{
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.navbar-nav li a:hover {
+    color: var(--primary);
+}
+
+.download-cv {
+    background-color: var(--primary);
+    color: var(--text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.download-cv:hover {
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column;
-        padding: 20px;
-    }
-    .navbar label{
-        display: inline-flex;
         align-items: center;
-        cursor: pointer;
     }
-    #toggler:checked ~ .menu{
-        max-height: 100%;
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--background);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        transition: transform 0.3s ease-in-out;
     }
-}
 
-/* contact form */
-.section{
-    background-color: rgb(29, 29, 31);
-    height: 520px;
-    max-width: 100%;
-    padding-top: 80px;
-}
+    .navbar-nav.active {
+        transform: translateY(100%);
+        display: flex;
+    }
 
-.sectionB{
-    background-color: rgb(245, 245, 247);
-    height: 520px;
-    max-width: 100%;
-    padding-top: 80px;
+    .navbar-toggle {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .navbar-toggle.active {
+        color: var(--primary);
+    }
+
+    .navbar-nav li {
+        margin: 10px 0;
+    }
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
 }
