@@ -1,15 +1,18 @@
 :root {
-    --text: rgb(242, 242, 242);
-    --background: rgb(20, 20, 20);
-    --primary: rgb(0, 187, 237);
-    --secondary: rgb(255, 157, 0);
-    --accent: rgb(191, 0, 29);
+    --text-primary: #ffffff;
+    --text-secondary: #bdc3c7;
+    --background: #121212;
+    --surface: #1a1a1a;
+    --primary: #3498db;
+    --secondary: #e74c3c;
+    --accent: #2ecc71;
+    --gray: #bdc3c7;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: var(--text);
+    color: var(--text-primary);
     background-color: var(--background);
 }
 
@@ -18,7 +21,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: var(--background);
+    background-color: var(--surface);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -31,14 +34,14 @@ body {
     font-size: 24px;
     color: var(--primary);
     text-decoration: none;
-    margin-right: 10px; /* Add space between logo and toggle */
+    margin-right: 10px;
 }
 
 .navbar-toggle {
     font-size: 24px;
     cursor: pointer;
     display: none;
-    margin-left: 10px; /* Add space between logo and toggle */
+    margin-left: 10px;
 }
 
 .navbar-nav {
@@ -55,17 +58,17 @@ body {
 
 .navbar-nav li a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--text-primary);
     transition: color 0.3s;
 }
 
 .navbar-nav li a:hover {
-    color: var(--primary);
+    color: var(--text-secondary);
 }
 
 .download-cv {
     background-color: var(--primary);
-    color: var(--text);
+    color: var(--text-primary);
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -74,7 +77,6 @@ body {
 
 .download-cv:hover {
     background-color: var(--secondary);
-    color: var(--background);
 }
 
 /* Responsive */
@@ -88,9 +90,9 @@ body {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: var(--background);
+        background-color: var(--surface);
         position: absolute;
-        top: 70px;
+        top: -92px;
         left: 0;
         transition: transform 0.3s ease-in-out;
     }
@@ -119,5 +121,67 @@ body {
         align-items: center;
         width: 100%;
         justify-content: space-between;
+    }
+}
+
+
+/* contact form section */
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-form {
+    background-color: var(--surface);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    box-sizing: border-box; /* Add this line to adjust box-sizing */
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 100%;
+        padding: 10px;
     }
 }
