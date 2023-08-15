@@ -7,65 +7,254 @@ Color Pallete
 --accent: rgb(191, 0, 29);
 
 
+-------------------
+pre
 
-.navbar{
+ <!--Nav section-->
+    <!-- <nav class="navbar">
+        <a href="#" class="logo">Logo Here</a>
+        <input type="checkbox" id="toggler">
+        <label for="toggler"><img src="ico/feather/menu.svg"/></label>
+        <div class="menu">
+            <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="downloadButton">Download</button></li>
+            </ul>
+        </div>
+    </nav> -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-logo" href="#">My Website</a>
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </div>
+        <ul class="navbar-nav" id="navbarNav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work Experience</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a class="download-cv" href="#">Download CV</a></li>
+        </ul>
+    </div>
+    <!--Nav section-->
+
+    <!--about-->
+    <div id="about" class="sectionB" style="padding-top:0;">
+        
+    </div>
+    <div id="skills" class="section">
+        skills here
+    </div>
+    <div id="portfolio" class="sectionB">
+        portfolio here
+    </div>
+    <div id="contact" class="section">
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+    ---------------------
+
+pre css 
+
+:root {
+    --text-primary: #ffffff;
+    --text-secondary: #bdc3c7;
+    --background: #121212;
+    --surface: #1a1a1a;
+    --primary: #3498db;
+    --secondary: #e74c3c;
+    --accent: #2ecc71;
+    --gray: #bdc3c7;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background);
+}
+
+.navbar {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
-    background: rgb(20, 20, 20);
-    padding: 15px;
-    position: sticky;
-    max-width: 100%;
-    top: 0;
-    z-index: 100;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--surface);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.navbar a{
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    color: var(--primary);
     text-decoration: none;
-    color: rgb(29, 29, 31);
+    margin-right: 10px;
 }
-.logo{
-    margin: 10px;
+
+.navbar-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    margin-left: 10px;
 }
-.list{
+
+.navbar-nav {
     list-style: none;
     display: flex;
-    gap: 25px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
-#toggler, .navbar label{
-    display: none;
+
+.navbar-nav li {
+    margin: 0 15px;
 }
-@media screen and (max-width: 600px) {
-    .menu{
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-    }
-    .list{
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: color 0.3s;
+}
+
+.navbar-nav li a:hover {
+    color: var(--text-secondary);
+}
+
+.download-cv {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.download-cv:hover {
+    background-color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column;
-        padding: 20px;
-    }
-    .navbar label{
-        display: inline-flex;
         align-items: center;
-        cursor: pointer;
     }
-    #toggler:checked ~ .menu{
-        max-height: 100%;
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--surface);
+        position: absolute;
+        top: -92px;
+        left: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-nav.active {
+        transform: translateY(100%);
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .navbar-toggle.active {
+        color: var(--primary);
+    }
+
+    .navbar-nav li {
+        margin: 10px 0;
+    }
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
     }
 }
 
-/* contact form */
-.section{
-    background-color: rgb(29, 29, 31);
-    height: 520px;
-    max-width: 100%;
-    padding-top: 80px;
+
+/* contact form section */
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.sectionB{
-    background-color: rgb(245, 245, 247);
-    height: 520px;
-    max-width: 100%;
-    padding-top: 80px;
+.contact-form {
+    background-color: var(--surface);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    box-sizing: border-box; /* Add this line to adjust box-sizing */
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 100%;
+        padding: 10px;
+    }
 }

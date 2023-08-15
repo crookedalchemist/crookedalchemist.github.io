@@ -10,9 +10,11 @@ document.getElementById("downloadButton").addEventListener("click", function(){
     anchor.remove();
 })
 
-function toggleMenu() {
-    var navbarNav = document.getElementById("navbarNav");
-    var navbarToggle = document.querySelector(".navbar-toggle");
-    navbarNav.classList.toggle("active");
-    navbarToggle.classList.toggle("active");
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector('.navbar-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    toggleButton.addEventListener('click', function() {
+        navbarNav.classList.toggle('active');
+    });
+});

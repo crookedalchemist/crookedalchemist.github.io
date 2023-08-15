@@ -1,53 +1,44 @@
 :root {
     --text-primary: #ffffff;
-    --text-secondary: #bdc3c7;
     --background: #121212;
     --surface: #1a1a1a;
     --primary: #3498db;
     --secondary: #e74c3c;
-    --accent: #2ecc71;
-    --gray: #bdc3c7;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     color: var(--text-primary);
     background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
     background-color: var(--surface);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-container {
-    display: flex;
-    align-items: center;
+    padding: 20px;
+    z-index: 100;
 }
 
 .navbar-logo {
     font-size: 24px;
     color: var(--primary);
     text-decoration: none;
-    margin-right: 10px;
-}
-
-.navbar-toggle {
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    margin-left: 10px;
 }
 
 .navbar-nav {
     list-style: none;
     display: flex;
-    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -59,118 +50,154 @@ body {
 .navbar-nav li a {
     text-decoration: none;
     color: var(--text-primary);
-    transition: color 0.3s;
 }
 
-.navbar-nav li a:hover {
-    color: var(--text-secondary);
-}
-
-.download-cv {
-    background-color: var(--primary);
-    color: var(--text-primary);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.download-cv:hover {
-    background-color: var(--secondary);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--surface);
-        position: absolute;
-        top: -92px;
-        left: 0;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .navbar-nav.active {
-        transform: translateY(100%);
-        display: flex;
-    }
-
-    .navbar-toggle {
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-
-    .navbar-toggle.active {
-        color: var(--primary);
-    }
-
-    .navbar-nav li {
-        margin: 10px 0;
-    }
-
-    .navbar-container {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
-
-/* contact form section */
-.contact-form-container {
+/* Hero Section */
+.hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    text-align: center;
 }
 
-.contact-form {
-    background-color: var(--surface);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-}
-
-.contact-form h2 {
-    margin: 0 0 20px;
-    font-size: 24px;
+.hero h1 {
+    font-size: 36px;
+    margin: 0;
     color: var(--text-primary);
 }
 
-.contact-form input[type="text"],
+.hero p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: var(--text-primary);
+}
+
+.cta-button {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary);
+}
+
+/* About Me Section */
+.about {
+    padding: 50px;
+    text-align: center;
+    background-color: var(--surface);
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Skills Section */
+.skills {
+    padding: 50px;
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+.skills h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills li {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 50px;
+    background-color: var(--surface);
+    color: var(--text-primary);
+}
+
+.portfolio h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.portfolio .project {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.project img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.project-details {
+    flex: 1;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px;
+    text-align: center;
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: var(--surface);
     color: var(--text-primary);
-    box-sizing: border-box; /* Add this line to adjust box-sizing */
-}
-
-.contact-form textarea {
-    resize: vertical;
+    box-sizing: border-box;
 }
 
 .contact-form button {
     background-color: var(--primary);
     color: var(--text-primary);
-    border: none;
     padding: 10px 20px;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
@@ -178,10 +205,43 @@ body {
     background-color: var(--secondary);
 }
 
-/* Responsive */
+  /* Responsive Navbar */
+  .navbar-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    margin-top: 10px;
+}
+
 @media (max-width: 768px) {
-    .contact-form {
-        max-width: 100%;
+    body {
+        padding-top: 70px; /* Add padding to prevent content overlap */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .navbar {
+        flex-direction: row; /* Display logo and toggle in the same row */
+        justify-content: space-between; /* Distribute content horizontally */
+        align-items: center; /* Center vertically */
         padding: 10px;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-nav {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-nav li {
+        margin: 10px 0;
     }
 }
