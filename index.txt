@@ -5,6 +5,11 @@ Color Pallete
 --primary: rgb(0, 187, 237);
 --secondary: rgb(97, 58, 0);
 --accent: rgb(191, 0, 29);
+--------glass morph
+background: --morph;
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+border: 1px solid rgba(18,18,18,0.425);
 
 
 -------------------
