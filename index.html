@@ -12,7 +12,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Your Name</a>
+      <a class="navbar-brand" href="#">Lentheric Losper</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,16 +20,28 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about-skill">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
+        <!-- Toggle Switch -->
+        <div class="d-flex align-items-center ms-auto">
+          <!-- Theme Toggle Text -->
+          <span class="me-2">Toggle Theme</span>
+          <!-- Toggle Switch -->
+          <label class="toggle-switch" for="themeToggle">
+            <input type="checkbox" class="toggle-input" id="themeToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <!-- Toggle Switch -->
       </div>
     </div>
   </nav>
   <!-- Navbar -->
 
   <!-- Hero Section -->
-  <section id="hero" class="hero">
+  <section id="hero" class="hero mt-5 p-5">
     <div class="container text-center">
       <h1 class="display-4">Lentherick Losper</h1>
       <p class="lead" id="typing-effect">Frontend Developer</p>
@@ -39,7 +51,7 @@
   <!-- Hero Section -->
 
   <!-- About Me and Skills section -->
-  <section id="about-skill" class="container mt-5 p-4">
+  <section id="about-skill" class="container mt-5 p-5">
     <div class="row">
       <div class="col-md-6">
         <!-- About Me section -->
@@ -71,7 +83,7 @@
   <!-- About Me and Skills section -->
 
   <!-- Resume Section -->
-  <section id="resume" class="resume p-4">
+  <section id="resume" class="resume mt-5 p-5">
     <div class="container">
       <h2>Resume</h2>
       <div class="row">
@@ -101,7 +113,7 @@
   <!-- Resume Section -->
 
   <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio p-4">
+  <section id="portfolio" class="portfolio mt-5 p-5">
     <div class="container">
       <h2>Portfolio</h2>
       <ul class="nav nav-pills mb-4" id="portfolioTabs" role="tablist">
@@ -149,26 +161,26 @@
   <!-- Portfolio Section -->
 
   <!-- Contact Section -->
-  <section id="contact" class="contact py-4">
-    <div class="container">
-      <h2>Contact</h2>
+  <section id="contact" class="contact mt-5 p-5">
+    <!-- Google Maps Embed Code -->
+    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28629.761597979235!2d28.195903599999998!3d-26.238279499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1692567187713!5m2!1sen!2sza" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Contact Form Container -->
+    <div class="contact-form-container">
+      <h2 class="text-center mb-4">Contact Us</h2>
       <form>
         <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" class="form-control" placeholder="Your Name">
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" name="email" required>
+          <input type="email" class="form-control" placeholder="Your Email">
         </div>
         <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
     </div>
-  </section>
+  </section>  
   <!-- Contact Section -->
 
   <!-- Scroll to Top Button -->
@@ -178,7 +190,7 @@
   <!-- Scroll to Top Button -->
 
   <!-- Footer Section -->
-  <footer class="footer py-5">
+  <footer class="footer mt-1 p-1">
     <div class="container text-center">
       <p>&copy; 2023 Lentherick Losper. All rights reserved.</p>
     </div>

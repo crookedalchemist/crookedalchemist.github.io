@@ -1,6 +1,102 @@
+/* Light Color Palette */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #6C757D;
+  --background-color: #F8F9FA;
+  --text-color: #333;
+}
+
+/* Dark Color Palette */
+:root.dark-theme {
+  --primary-color: #3498db;
+  --secondary-color: #bdc3c7;
+  --background-color: #2c3e50;
+  --text-color: #fff;
+}
+
+body, .navbar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 .scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+.contact {
+  position: relative;
+  height: 500px; /* Adjust the height as needed */
+}
+
+.contact-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.contact-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.dark-theme {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Toggle Switch Styling */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.toggle-slider:before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  left: 2px;
+  top: 2px;
+  transition: 0.4s;
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: var(--primary-color);
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+}
+
+.toggle-input {
+  display: none;
+}
